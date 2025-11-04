@@ -14,7 +14,7 @@ los equipos de red en tres segmentos de red diferentes.
 ================
 CONFIGURACIONES
 =======
-ROUTER0
+ROUTER4
 =======
 (config interface gigabit)
 ena
@@ -33,7 +33,7 @@ do write
 exit
 
 =======
-ROUTER1
+ROUTER3
 =======
 ena
 conf t
@@ -57,7 +57,7 @@ do write
 exit
 
 =======
-ROUTER2
+ROUTER5
 =======
 
 ena
@@ -79,7 +79,7 @@ CONFIGURACION DE ENRUTAMIENTO ESTÁTICO IPROUTE A CADA ROUTER
 ===========================================================
 
 ========
-ROUTER0
+ROUTER4
 ========
 
 ena
@@ -93,7 +93,7 @@ copy running-config startup-config
 exit
 
 ========
-ROUTER1
+ROUTER3
 ========
 ena
 conf t
@@ -104,7 +104,7 @@ copy running-config startup-config
 exit
 
 ========
-ROUTER2
+ROUTER5
 ========
 ena
 conf t
