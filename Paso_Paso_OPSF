@@ -1,0 +1,137 @@
+Proyecto #9 Varios
+Enrutamiento / OSPF /
+Ing.Pablo Palacios
+
+PROTECTO DE REDES DE COMPUTADORAS
+PACKET TRACER DE CISCO
+CONFIGURAR UNA RED BÁSICA CON 
+3 SEGMENTOS DE RED.
+
+Objetivo:
+Enseñar a los estudiantes la configuración en packet tracert
+los equipos de red en tres segmentos de red diferentes.
+
+================
+CONFIGURACIONES
+=======
+ROUTER7
+=======
+(config interface gigabit)
+ena
+conf t
+interface gigabit0/0
+ip address 192.168.1.1
+no shut
+do write
+exit
+
+(config interface serial derecha)
+interface serial0/0/0
+ip address 192.168.4.1 255.255.255.0
+no shut
+do write
+exit
+
+=======
+ROUTER6
+=======
+ena
+conf t
+
+interface gigabit0/0
+ip address 192.168.2.1 255.255.255.0
+no shut
+do write
+exit
+
+interface serial0/0/0
+ip address 192.168.4.2 255.255.255.0 !(config interface serial izquierda)
+no shut
+do write
+exit
+
+interface serial0/0/1   !(config interface serial derecha)
+ip adrees 192.168.5.2
+no shut
+do write
+exit
+
+=======
+ROUTER8
+=======
+
+ena
+conf t
+interface serial0/0/0
+ip address 192.168.5.1 255.255.255.0
+no shut
+do write
+exit
+
+interface gigabit0/0
+ip address 192.168.3.1 255.255.255.0
+no shut
+do write
+exit
+
+===========================================================
+CONFIGURACION DE ENRUTAMIENTO DINÁMICO OSPF A CADA ROUTER
+===========================================================
+
+========
+ROUTER7
+========
+
+ena
+conf t
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+ network 192.168.4.0 0.0.0.255 area 0
+exit
+copy running-config startup-config
+exit
+
+========
+ROUTER6
+========
+ena
+conf t
+router ospf 1
+ network 192.168.2.0 0.0.0.255 area 0
+ network 192.168.1.0 0.0.0.255 area 0
+ network 192.168.4.0 0.0.0.255 area 0
+ network 192.168.5.0 0.0.0.255 area 0
+ network 192.168.3.0 0.0.0.255 area 0
+exit
+copy running-config startup-config
+exit
+
+========
+ROUTER8
+========
+ena
+conf t
+router ospf 1
+ network 192.168.3.0 0.0.0.255 area 0
+ network 192.168.5.0 0.0.0.255 area 0
+ network 192.168.2.0 0.0.0.255 area 0
+ network 192.168.4.0 0.0.0.255 area 0
+ network 192.168.1.0 0.0.0.255 area 0 
+exit
+copy running-config startup-config
+exit
+
+
+======================
+CONFIGURAR PCS
+======================
+1. Debes configurar cada PC en su segmento de red
+2. Utiliza IP estático en cada PC de acuerdo a su segmento de red
+3. Ejemplo: IP Estático, Subnet, Gateway
+
+
+
+======================
+Felicidades
+Ing. Pablo palacios
+======================
