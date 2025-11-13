@@ -98,7 +98,7 @@ ena
 conf t
 router ospf 1
  network 192.168.2.0 0.0.0.255 area 0 ! La máscara es la resta del WildCard ej: WildCard 255.255.255.255 resto /24 255.255.255.0) = Respuesta es = 0.0.0.255
- network 192.168.1.0 0.0.0.255 area 0
+ network 192.168.1.0 0.0.0.255 area 0 ! El Área 0 es el Núcle o Backbone no se puede cambiar en el protocolo ospf. El ID 1 ejemplo: ospf 1 y ospf 10, si puede variar en los routers y no deja la adyacencia.
  network 192.168.4.0 0.0.0.255 area 0
  network 192.168.5.0 0.0.0.255 area 0
  network 192.168.3.0 0.0.0.255 area 0
