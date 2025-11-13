@@ -97,7 +97,7 @@ ROUTER6
 ena
 conf t
 router ospf 1
- network 192.168.2.0 0.0.0.255 area 0
+ network 192.168.2.0 0.0.0.255 area 0 ! La máscara es la resta del WildCard ej: WildCard 255.255.255.255 resto /24 255.255.255.0) = Respuesta es = 0.0.0.255
  network 192.168.1.0 0.0.0.255 area 0
  network 192.168.4.0 0.0.0.255 area 0
  network 192.168.5.0 0.0.0.255 area 0
