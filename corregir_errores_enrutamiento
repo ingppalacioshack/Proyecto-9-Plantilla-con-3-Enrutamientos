@@ -4,15 +4,16 @@ Eliminar un ip route (elimina una linea)
 no ip route 10.0.0.0 255.0.0.0 20.0.0.201
 
 ================================================
-Eliminar Ripv2 (elimina todo el rip)
+Eliminar Ripv2 (eliminar todo el rip)
+route rip
 no router rip
 
-router rip (elimina una linea rip)
+router rip (eliminar una linea rip)
 no network 192.168.10.0
 ================================================
 Eliminar todo el ospf
 no router ospf
 
-router ospf 1 (para eliminar una linea)
+router ospf 1 (eliminar una linea)
 no network 192.168.10.0 0.0.0.255 area 0
 ================================================
